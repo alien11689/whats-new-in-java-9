@@ -1,3 +1,5 @@
 #!/bin/sh -x
 
-./exampleApp/bin/java -m example.runner
+./dprApp/bin/java -m dpr.runner
+
+./dprApp/bin/dpr.runner

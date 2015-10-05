@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh -ex
 ./clean.sh
 ./build2.sh
 ./library.sh

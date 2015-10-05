@@ -1,3 +1,3 @@
 #!/bin/sh -x
 
-rm -rf modules mlib exampleApp
+rm -rf modules mlib dprApp

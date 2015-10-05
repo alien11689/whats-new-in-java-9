@@ -3,12 +3,12 @@
 
 JAVA_HOME=../..
 
-mkdir -p modules/example.api modules/example.impl modules/example.runner
+mkdir -p modules/dpr.api modules/dpr.impl modules/dpr.runner
 
-$JAVA_HOME/bin/javac -d modules/example.api -modulepath modules -sourcepath src `find src/example.api -name '*.java'`
+$JAVA_HOME/bin/javac -d modules/dpr.api -modulepath modules -sourcepath src `find src/dpr.api -name '*.java'`
 
-$JAVA_HOME/bin/javac -d modules/example.impl -modulepath modules -sourcepath src `find src/example.impl -name '*.java'`
+$JAVA_HOME/bin/javac -d modules/dpr.impl -modulepath modules -sourcepath src `find src/dpr.impl -name '*.java'`
 
-$JAVA_HOME/bin/javac -d modules/example.runner -modulepath modules -sourcepath src `find src/example.runner -name '*.java'`
+$JAVA_HOME/bin/javac -d modules/dpr.runner -modulepath modules -sourcepath src `find src/dpr.runner -name '*.java'`
 
-$JAVA_HOME/bin/java -modulepath modules -m example.runner/com.example.runner.ExampleRunner
+$JAVA_HOME/bin/java -modulepath modules -m dpr.runner/com.dpr.runner.Main
