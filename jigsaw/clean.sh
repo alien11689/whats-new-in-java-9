@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/bin/sh -x
 
-rm -rf modules
+rm -rf modules mlib exampleApp
