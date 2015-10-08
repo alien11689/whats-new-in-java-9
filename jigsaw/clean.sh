@@ -1,3 +1,3 @@
 #!/bin/sh -x
 
-rm -rf modules mlib dprApp
+rm -rf modules mlib dprApp dprApp.jimage extractedImageLocation
