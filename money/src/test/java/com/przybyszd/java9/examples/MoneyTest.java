@@ -30,7 +30,7 @@ public class MoneyTest {
 
     @Test
     public void createSimpleCurrencyTest() {
-        CurrencyUnit pln = MonetaryCurrencies.getCurrency("PLN");
+        CurrencyUnit pln = Monetary.getCurrency("PLN");
         assertNotNull(pln);
         assertEquals("PLN", pln.getCurrencyCode());
         assertEquals(2, pln.getDefaultFractionDigits());
@@ -39,7 +39,7 @@ public class MoneyTest {
 
     @Test
     public void normalAndFastMoneyTest() {
-        CurrencyUnit usd = MonetaryCurrencies.getCurrency(Locale.US);
+        CurrencyUnit usd = Monetary.getCurrency(Locale.US);
         MonetaryAmount normal = Money.of(new BigDecimal("1.5"), usd);
         MonetaryAmount fast = FastMoney.of(new BigDecimal("1.5"), usd);
         assertEquals("USD 1.5", normal.toString());
@@ -48,7 +48,7 @@ public class MoneyTest {
 
     @Test
     public void moneyFormatterTest() {
-        CurrencyUnit usd = MonetaryCurrencies.getCurrency(Locale.US);
+        CurrencyUnit usd = Monetary.getCurrency(Locale.US);
         MonetaryAmount money = Money.of(new BigDecimal("1.5"), usd);
         MonetaryAmountFormat format = MonetaryFormats.getAmountFormat(new Locale("pl_PL"));
         assertEquals("USD 1.50", format.format(money));
@@ -57,7 +57,7 @@ public class MoneyTest {
 
     @Test
     public void moneyOperationsTest() {
-        CurrencyUnit usd = MonetaryCurrencies.getCurrency(Locale.US);
+        CurrencyUnit usd = Monetary.getCurrency(Locale.US);
         MonetaryAmount m1 = Money.of(new BigDecimal("1.5"), usd);
         MonetaryAmount m2 = Money.of(new BigDecimal("3.59"), usd);
         assertEquals(Money.of(new BigDecimal("5.09"), usd), m1.add(m2));
@@ -67,8 +67,8 @@ public class MoneyTest {
 
     @Test
     public void moneyFunctionsTest() {
-        CurrencyUnit usd = MonetaryCurrencies.getCurrency(Locale.US);
-        CurrencyUnit pln = MonetaryCurrencies.getCurrency("PLN");
+        CurrencyUnit usd = Monetary.getCurrency(Locale.US);
+        CurrencyUnit pln = Monetary.getCurrency("PLN");
         MonetaryAmount m1 = Money.of(new BigDecimal("1.5"), usd);
         MonetaryAmount m2 = Money.of(new BigDecimal("3.59"), usd);
         MonetaryAmount m3 = Money.of(new BigDecimal("2.50"), pln);
@@ -87,8 +87,8 @@ public class MoneyTest {
 //        ExchangeRateProvider ecbRateProvider = MonetaryConversions
 //                .getExchangeRateProvider("ECB");
 //
-//        CurrencyUnit real = MonetaryCurrencies.getCurrency("BRL");
-//        CurrencyUnit dollar = MonetaryCurrencies.getCurrency(Locale.US);
+//        CurrencyUnit real = Monetary.getCurrency("BRL");
+//        CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
 //
 //        CurrencyConversion ecbDollarConvertion = ecbRateProvider
 //                .getCurrencyConversion(dollar);
@@ -100,8 +100,8 @@ public class MoneyTest {
 //        System.out.println(money.with(ecbDollarConvertion));
 //        System.out.println(money.with(imfDollarConvertion));
 
-        CurrencyUnit usd = MonetaryCurrencies.getCurrency(Locale.US);
-        CurrencyUnit pln = MonetaryCurrencies.getCurrency("PLN");
+        CurrencyUnit usd = Monetary.getCurrency(Locale.US);
+        CurrencyUnit pln = Monetary.getCurrency("PLN");
         //ExchangeRateProvider imfRateProvider = MonetaryConversions.getExchangeRateProvider("IMF");
 
         ExchangeRateProvider ecbRateProvider = MonetaryConversions.getExchangeRateProvider("ECB");
@@ -115,8 +115,8 @@ public class MoneyTest {
         Money.of(new
                 BigDecimal("1.3684690522475821498"), usd);
 
-        MonetaryRounding rounding = MonetaryRoundings
-                .getRounding(RoundingQueryBuilder.of()
+        MonetaryRounding rounding = Monetary.
+                getRounding(RoundingQueryBuilder.of()
                         .setCurrency(usd).build());
         assertEquals(Money.of(new
                         BigDecimal("1.37"), usd),
