@@ -82,27 +82,8 @@ public class MoneyTest {
 
     @Test
     public void exchangeTest() {
-//        ExchangeRateProvider imfRateProvider = MonetaryConversions
-//                .getExchangeRateProvider("IMF");
-//        ExchangeRateProvider ecbRateProvider = MonetaryConversions
-//                .getExchangeRateProvider("ECB");
-//
-//        CurrencyUnit real = Monetary.getCurrency("BRL");
-//        CurrencyUnit dollar = Monetary.getCurrency(Locale.US);
-//
-//        CurrencyConversion ecbDollarConvertion = ecbRateProvider
-//                .getCurrencyConversion(dollar);
-//
-//        CurrencyConversion imfDollarConvertion = imfRateProvider
-//                .getCurrencyConversion(dollar);
-//
-//        MonetaryAmount money = Money.of(10, real);
-//        System.out.println(money.with(ecbDollarConvertion));
-//        System.out.println(money.with(imfDollarConvertion));
-
         CurrencyUnit usd = Monetary.getCurrency(Locale.US);
         CurrencyUnit pln = Monetary.getCurrency("PLN");
-        //ExchangeRateProvider imfRateProvider = MonetaryConversions.getExchangeRateProvider("IMF");
 
         ExchangeRateProvider ecbRateProvider = MonetaryConversions.getExchangeRateProvider("ECB");
         ExchangeRate exchangeRate = ecbRateProvider.getExchangeRate("PLN", "USD");
