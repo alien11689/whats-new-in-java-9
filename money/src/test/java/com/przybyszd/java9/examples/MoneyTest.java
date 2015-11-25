@@ -106,22 +106,4 @@ public class MoneyTest {
         );
 
     }
-
-    @Test
-    public void test() throws ScriptException {
-        ScriptEngineManager m = new
-                ScriptEngineManager();
-        ScriptEngine e =
-                m.getEngineByName("nashorn");
-
-        ScriptObjectMirror o = (ScriptObjectMirror) e.eval("JSON.parse('{\"name\":\"John\"}');");
-        assertEquals("John", o.getMember("name"));
-
-        final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try (BufferedReader r = reader) {
-            // ...
-        } catch (IOException ex) {
-            // ...
-        }
-    }
 }
