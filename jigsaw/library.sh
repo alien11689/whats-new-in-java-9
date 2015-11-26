@@ -1,5 +1,4 @@
 #!/bin/sh -x
-JAVA_HOME=../..
 
 mkdir mlib
 

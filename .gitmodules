@@ -1,0 +1,3 @@
+[submodule "BuildHelpers"]
+	path = BuildHelpers
+	url = git@github.com:alien11689/BuildHelpers.git

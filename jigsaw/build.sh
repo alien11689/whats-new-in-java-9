@@ -1,8 +1,6 @@
 #!/bin/sh -x
 ./clean.sh
 
-JAVA_HOME=../..
-
 mkdir -p modules/dpr.api modules/dpr.impl modules/dpr.runner
 
 $JAVA_HOME/bin/javac -d modules/dpr.api -modulepath modules -sourcepath src `find src/dpr.api -name '*.java'`
